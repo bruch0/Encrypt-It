@@ -88,18 +88,10 @@ list9 = ['Ù', 'g', 'V', '3', ',', 'ù', 'è', 'Ã', '9', '<', 'Q', 'ú', '.', '
          '5', '>', 'M', 'H', ';', 'À', 'y', 'n', 'ò', 'û', 'h', 'C', 'W', 'Ì', 'ó', 's', '&', 'á',
          'o', '`', 'ì']
 
-list10 = ['j', 'Á', 'W', 'J', 'E', 'P', 'u', '^', 'k', 'â', 't', 'ì', 's', 'a', 'ê', '>', 'F', 'Z',
-          'I', 'y', '[', 'Y', 'l', 'ñ', 'S', 'f', 'ó', 'o', 'Ê', 'h', '6', 'r', '%', '+', 'Û', 'X',
-          'È', 'A', 'í', '/', 'c', 'Ô', '0', 'H', 'Ú', 'i', 'ù', '5', '=', 'g', ';', '$', 'e', 'T',
-          'O', 'û', 'R', '!', '~', 'Ó', 'C', '(', 'U', 'ô', '{', '&', 'á', 'Ñ', 'Ã', '4', '}', '9',
-          '#', '<', 'K', 'd', '1', 'L', 'ç', 'w', 'n', 'À', 'Í', '|', 'm', '-', '2', ')', 'N', 'î', 'É',
-          'b', 'Ò', '7', '8', 'Î', 'q', 'G', 'Ù', 'z', ',', 'à', '*', 'ò', 'Â', 'è', 'Ì', 'V', 'ã',
-          '3', 'ú', ':', 'x', 'D', '?', 'é', '"', 'B', '@', '.', '`', 'p', ']', 'Q', 'v', '_', 'M',
-          'º', 'ª', '°']
 
 symbols = []
 
-listkey = random.randint(1, 10)
+listkey = random.randint(1, 9)
 
 if listkey == 1:
     symbols = list1[:]
@@ -119,8 +111,6 @@ if listkey == 8:
     symbols = list8[:]
 if listkey == 9:
     symbols = list9[:]
-if listkey == 10:
-    symbols = list10[:]
 
 minorkey = ['ʍ', 'µ', '±', 'Ð', 'Ø', '÷', '¾', '¿', '¶', '²', '¼', 'Ģ', 'Ŋ', 'Ż', 'Ʒ', 'ǆ', 'ǩ', 'ǽ']
 
@@ -178,8 +168,6 @@ def DecryptFunction(texto):
         symbols = list8[:]
     if texto[len(texto) - 1] == 9:
         symbols = list9[:]
-    if texto[len(texto) - 1] == 10:
-        symbols = list10[:]
 
     texto = texto[:-1]
 
@@ -723,6 +711,7 @@ class Window(QMainWindow):
         self.ButtonAboutFrame.clicked.connect(self.CallHowToUseFrames)
 
         # Connecting to Encrypt function
+
         self.ButtonEncrypt.clicked.connect(lambda: UpdateTextEncrypt(DocumentEn))
         self.ButtonEncrypt.clicked.connect(CopyEn)
         self.ButtonEncrypt.clicked.connect(MsgEncrypt)
